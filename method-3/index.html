@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>starRating</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+.box{position: relative;width: 80px;height: 16px;margin: 250px;overflow: hidden;}
+/*target方法没有直接用锚点方便*/
+/*#list_1,
+#list_2,
+#list_3,
+#list_4,
+#list_5{display: none;}
+#list_1:target,
+#list_2:target,
+#list_3:target,
+#list_4:target,
+#list_5:target{display: block;position: absolute;top: 0;left: 0;}*/
+
+.list{position: relative;width: 80px;height: 16px;background: url(images/star.png) 0 0 no-repeat;z-index: 1;}
+.item{position: absolute;top: 0;width: 16px;height: 16px;cursor: pointer;z-index: 3;}
+.item_1{left: 0;}
+.item_2{left: 16px;}
+.item_3{left: 32px;}
+.item_4{left: 48px;}
+.item_5{left: 64px;}
+.item:hover{background: url(images/star.png) no-repeat;z-index: 2;left: 0;width: 80px;}
+.item_1:hover,.list_1{background-position: 0 -16px;}
+.item_2:hover,.list_2{background-position: 0 -32px;}
+.item_3:hover,.list_3{background-position: 0 -48px;}
+.item_4:hover,.list_4{background-position: 0 -64px;}
+.item_5:hover,.list_5{background-position: 0 -80px;}
+
+</style>
+</head>
+<body>
+<div class="box">
+	<ul class="list" id="list">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+	<ul class="list list_1" id="list_1">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+	<ul class="list list_2" id="list_2">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+	<ul class="list list_3" id="list_3">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+	<ul class="list list_4" id="list_4">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+	<ul class="list list_5" id="list_5">
+		<a href="#list_1" class="item item_1" title="很不好"></a>
+		<a href="#list_2" class="item item_2" title="不好"></a>
+		<a href="#list_3" class="item item_3" title="一般"></a>
+		<a href="#list_4" class="item item_4" title="好"></a>
+		<a href="#list_5" class="item item_5" title="很好"></a>
+	</ul>
+</div>	
+
+</body>
+</html>

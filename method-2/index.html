@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>starRating</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+.list{margin: 50px;overflow: hidden;}
+.item{float: left;width: 16px;height: 16px;cursor: pointer;}
+</style>
+</head>
+<body>
+
+<ul class="list" id="list">
+	<img src="images/star_off.png" class="item" title="很不好">
+	<img src="images/star_off.png" class="item" title="不好">
+	<img src="images/star_off.png" class="item" title="一般">
+	<img src="images/star_off.png" class="item" title="好">
+	<img src="images/star_off.png" class="item" title="很好">
+</ul>
+
+<ul class="list" id="list2">
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+	<img src="images/star_off.png" class="item" />
+</ul>
+
+<script src="js/script.js"></script>
+<script>
+var list = document.getElementById("list");
+var list2 = document.getElementById("list2");
+rating.init(list, {
+	mode: "LightHalf",
+	num: 2.5,
+	//点击之后不能继续操作
+	chosen: function(index, all){
+		
+	}
+});
+rating.init(list2, {
+	num: 4,
+	select: function(index, all){
+		console.log(index + "/" + all);
+	},
+	chosen: function(index, all){
+		console.log(index + "/" + all);
+	}
+});
+</script>
+</body>
+</html>

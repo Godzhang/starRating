@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>starRating</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+.rating,.rating-display{height: 16px;background: url(images/star.png) 0 0 repeat-x;}
+.rating{position: relative;margin: 200px auto;width: 80px;}
+.rating-display{position: absolute;top: 0;left: 0;width: 0;height: 16px;background-position: 0 -16px;}
+.rating-mask{position: absolute;top: 0;left: 0;width: 100%;height: 16px;overflow: hidden;}
+.rating-item{float: left;width: 16px;height: 16px;cursor: pointer;}
+
+</style>
+</head>
+<body>
+
+<div id="rating" class="rating">
+	
+</div>
+
+<script src="js/script.js"></script>
+<script>
+var el = document.getElementById("rating");
+rating.init(el,{
+	total: 8,
+	num: 5,
+	select: function(current, total){
+		console.log(current + " : " + total);
+	}
+});
+</script>
+</body>
+</html>
