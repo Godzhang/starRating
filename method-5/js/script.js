@@ -26,7 +26,7 @@ var rating = (function(){
 		this.displayWidth = this.opt.num * this.starWidth;
 	}
 	Rating.DEFAULT = {
-		mode: 'quarter',
+		mode: 'entire',
 		total: 5,
 		num: 2,
 		readOnly: false,
@@ -41,7 +41,7 @@ var rating = (function(){
 		}
 	}
 	Rating.prototype.buildHTML = function(){
-		var html = '<div class="rating-display" id="rating-display"></div><ul class="rating-mask" id="rating-mask">';
+		var html = '<div class="rating-display" id="'+ this.opt.displayId +'"></div><ul class="rating-mask" id="rating-mask">';
 		for(var i = 0, len = this.opt.total; i < len; i++){
 			html += '<li class="rating-item"></li>';
 		}
@@ -52,7 +52,7 @@ var rating = (function(){
 		//设置容器宽度
 		this.el.style.width = this.opt.total * this.starWidth + "px";
 		//设置展示区默认宽度
-		this.display = document.getElementById("rating-display");
+		this.display = document.getElementById(this.opt.displayId);
 		this.display.style.width = this.displayWidth + "px";
 		//设置每颗星星宽度
 		this.stars = this.el.getElementsByTagName('li');
@@ -66,7 +66,7 @@ var rating = (function(){
 			var target = event.target;
 			if(target.nodeName.toLowerCase() === 'li'){
 				self.opt.num = self.getIndex(self.stars, target) + 1;
-				self.display.style.width = self.opt.num * self.starWidth + "px"; 
+				self.display.style.width = self.opt.num * self.starWidth + "px";
 				(typeof self.opt.select === "function") && self.opt.select.call(target, self.opt.num, self.stars.length);
 			}		
 		}, false);

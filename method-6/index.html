@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>starRating</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+.rating,.rating-display{height: 16px;background: url(images/star.png) 0 0 repeat-x;cursor: pointer;}
+.rating{position: relative;margin: 200px auto;width: 80px;}
+.rating-display{position: absolute;top: 0;left: 0;width: 0;height: 16px;background-position: 0 -16px;}
+</style>
+</head>
+<body>
+
+<div id="rating" class="rating">
+	<div class="rating-display" id="rating-display"></div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+var el = document.getElementById("rating");
+rating.init(el,{
+	total: 10,
+	num: 4.5,
+	select: function(current, total){
+		console.log( Math.floor((current/total) * 100) + "%");
+	},
+	chosen: function(current, total){
+		console.log( Math.floor((current/total) * 100) + "%");
+		rating.init(el, 'unbindEvent');
+	}
+});
+</script>
+</body>
+</html>

@@ -6,27 +6,67 @@
 <link rel="stylesheet" href="css/reset.css">
 <style>
 .rating,.rating-display{height: 16px;background: url(images/star.png) 0 0 repeat-x;}
-.rating{position: relative;margin: 200px auto;width: 80px;}
+.rating{position: relative;margin: 100px auto;width: 80px;}
 .rating-display{position: absolute;top: 0;left: 0;width: 0;height: 16px;background-position: 0 -16px;}
 .rating-mask{position: absolute;top: 0;left: 0;width: 100%;height: 16px;overflow: hidden;}
 .rating-item{float: left;width: 16px;height: 16px;cursor: pointer;}
-
+.mark{height: 30px;text-align: center;line-height: 30px;font-size: 20px;}
 </style>
 </head>
 <body>
 
-<div id="rating" class="rating">
-	
-</div>
+<div id="rating" class="rating"></div>
+<div class="mark">评分：<span id="score">0</span></div>
+<div id="rating2" class="rating"></div>
+<div class="mark">评分：<span id="score2">0</span></div>
+<div id="rating3" class="rating"></div>
+<div class="mark">评分：<span id="score3">0</span></div>
 
 <script src="js/script.js"></script>
 <script>
 var el = document.getElementById("rating");
+var el2 = document.getElementById("rating2");
+var el3 = document.getElementById("rating3");
+var score = document.getElementById("score");
+var score2 = document.getElementById("score2");
+var score3 = document.getElementById("score3");
+//整颗星，5分制
 rating.init(el,{
-	total: 8,
-	num: 5,
+	mode: 'entire',
+	displayId: 'rating-display',
+	total: 5,
+	num: 0,
 	select: function(current, total){
 		console.log(current + " : " + total);
+	},
+	chosen: function(current, total){
+		score.innerHTML = current;
+	}
+});
+//半颗星，10分制
+rating.init(el2,{
+	mode: 'half',
+	displayId: 'rating-display-2',
+	total: 5,
+	num: 0,
+	select: function(current, total){
+		console.log(current + " : " + total);
+	},
+	chosen: function(current, total){
+		score2.innerHTML = current;
+	}
+});
+//四分之一颗星，百分制
+rating.init(el3,{
+	mode: 'quarter',
+	displayId: 'rating-display-3',
+	total: 5,
+	num: 0,
+	select: function(current, total){
+		console.log(current + " : " + total);
+	},
+	chosen: function(current, total){
+		score3.innerHTML = current * 5;
 	}
 });
 </script>
